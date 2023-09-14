@@ -19,6 +19,7 @@ jobs:
           cd test_app
       - name: Do buildozer
         run: |
+          cd test_app
           buildozer android debug
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
