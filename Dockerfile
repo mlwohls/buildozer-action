@@ -4,6 +4,7 @@ FROM kivy/buildozer:latest
 # Buildozer will be installed in entrypoint.py
 # This is needed to install version specified by user
 RUN pip3 uninstall -y buildozer
+RUN pip3 install --user --upgrade Cython==0.29.33
 
 # Remove a lot of warnings
 # sudo: setrlimit(RLIMIT_CORE): Operation not permitted
