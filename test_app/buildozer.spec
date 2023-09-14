@@ -2,7 +2,7 @@
 
 title = Test App
 package.name = testapp
-package.domain = org.test
+package.domain = wohls.com
 
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
