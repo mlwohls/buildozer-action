@@ -59,7 +59,7 @@ class TwoByFourScreen(Screen):
     def on_pre_enter(self, *args):
         app.current_drill = "twobyfours"
         app.update_session_id()
-        self.add_history()
+        # self.add_history()
         
         if not self.data_table:
             self.data_table = MDDataTable(
