@@ -22,8 +22,8 @@ jobs:
           export PATH=$PATH:~/.local/bin/
           export APP_ANDROID_ACCEPT_SDK_LICENSE=1
           export BUILDOZER_WARN_ON_ROOT=0
-          buildozer -v android release
-        #  buildozer android debug
+          buildozer android debug
+        #  buildozer -v android release
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:

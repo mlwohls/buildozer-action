@@ -1,7 +1,7 @@
 [app]
 
-title = Test App
-package.name = testapp
+title = RND Test
+package.name = rnd
 package.domain = wohls.com
 
 source.dir = .

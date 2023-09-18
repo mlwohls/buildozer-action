@@ -13,7 +13,7 @@ requirements = python3,kivy
 orientation = portrait
 fullscreen = 0
 #my changes below
-#android.arch = armeabi-v7a
+#android.arch = arm64-v8a
 android.archs = arm64-v8a, armeabi-v7a
 android.release_artifact = aab
 p4a.branch = develop
