@@ -13,10 +13,10 @@ requirements = python3,kivy,kivymd,sqlite3,datetime,uuid
 orientation = portrait
 fullscreen = 0
 #my changes below
-#android.arch = armeabi-v7a
-android.archs = arm64-v8a, armeabi-v7a
-android.release_artifact = aab
-p4a.branch = develop
+android.arch = arm64-v8a
+#android.archs = arm64-v8a, armeabi-v7a
+android.release_artifact = apk
+#p4a.branch = develop
 
 
 # iOS specific
