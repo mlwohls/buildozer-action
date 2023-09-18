@@ -21,7 +21,7 @@ ScreenManager:
         bold: True
     MDLabel:
         markup: True
-        text: 'Your best [b]R[/b]OU[b]ND[/b]s are EA[b]RN[/b]E[b]D[/b] through practice'
+        text: 'YOUR BEST [b]R[/b]OU[b]ND[/b]s ARE EA[b]RN[/b]E[b]D[/b] THROUGH PRACTICE'
         font_style:  'Body1'
         halign: 'center'
         pos_hint: {'center_x': 0.5, 'center_y' : 0.49}
@@ -104,16 +104,79 @@ ScreenManager:
     orientation: "vertical"
     spacing: "10dp"
     size_hint: 1, None
-    height: "100dp"
+    height: "500dp"
 
     BoxLayout:
         orientation: 'vertical'
-        MDTextField:
-            id: twobyfour_score
-            text: ''
-            hint_text: "Add Score..."
-            max_text_length: 2
-            input_filter: 'int'
+        spacing: "10dp"
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: "10dp"
+            
+            MDLabel:
+                text: 'Score'
+                bold: True
+            
+            MDTextField:
+                id: twobyfour_score
+                text: ''
+                hint_text: "Add Score..."
+                max_text_length: 2
+                input_type: 'tel'
+                input_filter: 'int'
+        
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: "10dp"
+            MDLabel:
+                text: 'Club'
+                bold: True
+            
+            MDSegmentedControl:
+                id: twobyfour_club
+                MDSegmentedControlItem:
+                    text: "PW"
+                MDSegmentedControlItem:
+                    text: "GW"
+                MDSegmentedControlItem:
+                    text: "SW"
+                MDSegmentedControlItem:
+                    text: "LW"
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: "10dp"
+            MDLabel:
+                text: 'Lie'
+                bold: True
+            
+            MDSegmentedControl:
+                id: twobyfour_lie
+                MDSegmentedControlItem:
+                    text: "Tight"
+                    font_size: 20
+                MDSegmentedControlItem:
+                    text: "Rough"
+                    font_size: 20
+                MDSegmentedControlItem:
+                    text: "Sand"
+                    font_size: 20
+
+                    
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: "10dp"
+            MDLabel:
+                text: 'Total Distance (ft)'
+                bold: True
+            MDSlider:
+                id: twobyfour_distance
+                hint: True
+                min: 0
+                max: 60
+                value: 20
+                step: 5
+            
 
         BoxLayout:
             orientation: 'horizontal'
