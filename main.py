@@ -17,7 +17,7 @@ from database import Database
 # Initialize db instance
 db = Database()
 
-Window.size = (540, 1200)
+# Window.size = (540, 1200)
 
 class MainScreen(Screen):
     pass
