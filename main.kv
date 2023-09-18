@@ -26,6 +26,7 @@ ScreenManager:
         halign: 'center'
         pos_hint: {'center_x': 0.5, 'center_y' : 0.49}
         italics: True
+
     MDBottomAppBar:
         MDTopAppBar:
             icon: 'play'
@@ -52,6 +53,8 @@ ScreenManager:
             text: 'Back'
             pos_hint: {'center_x':0.5,'center_y':0.1}
             on_press: root.manager.current = 'main'
+    MDBoxLayout:
+        id: display_size
         
 
 <TwoByFourScreen>:
@@ -84,9 +87,10 @@ ScreenManager:
                 elevation_normal: 12
                 on_release: (root.show_dialog(), root.pull_current_scores())
         MDBoxLayout:
-            id: twobyfour_history_container
-            size_hint: 1, 0.4
+            size_hint: 1, 0.5
             orientation: "vertical"
+            padding: 30
+            spacing: 30
 
             MDLabel:
                 markup: True
@@ -95,6 +99,8 @@ ScreenManager:
                 halign: 'left'
                 valign: 'top'
                 size_hint: 1, 0.05
+            MDBoxLayout:
+                id: twobyfour_history_container
 
 
 
@@ -164,7 +170,7 @@ ScreenManager:
 
                     
         BoxLayout:
-            orientation: 'horizontal'
+            orientation: 'Vertical'
             spacing: "10dp"
             MDLabel:
                 text: 'Total Distance (ft)'
@@ -187,3 +193,17 @@ ScreenManager:
             MDFlatButton:
                 text: 'CANCEL'
                 on_release: app.root.get_screen("twobyfour").close_dialog()
+
+
+
+<OldControl>
+    MDSegmentedControl:
+        id: old
+        MDSegmentedControlItem:
+            text: "PW"
+        MDSegmentedControlItem:
+            text: "GW"
+        MDSegmentedControlItem:
+            text: "SW"
+        MDSegmentedControlItem:
+            text: "LW"

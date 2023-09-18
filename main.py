@@ -6,6 +6,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivymd.uix.datatables.datatables import MDDataTable
 from kivy.properties import StringProperty
 from kivy.metrics import dp
+from kivymd.uix.label.label import MDLabel
 
 # from kivymd.uix.list import TwoLineAvatarIconListItem, ILeftBodyTouch
 from kivymd.uix.selectioncontrol import MDCheckbox
@@ -17,12 +18,18 @@ from database import Database
 # Initialize db instance
 db = Database()
 
-# Window.size = (540, 1200)
+# Window.size = (1080, 2400)
 
 class MainScreen(Screen):
+    
     pass
 
 class DrillsScreen(Screen):
+    temp = None
+    def on_pre_enter(self, *args):
+        txt = str(Window.size)
+        self.temp = MDLabel(text=txt)
+        self.ids.display_size.add_widget(self.temp)
     pass
 
 class TwoByFourScreen(Screen):
@@ -88,7 +95,6 @@ class TwoByFourScreen(Screen):
 
         if not self.history_table:
             self.history_table = MDDataTable(
-                    pos_hint={"center_y": 0.5, "center_x": 0.5},
                     use_pagination=False,
                     column_data=[
                         ("Date", dp(30)),
