@@ -20,6 +20,7 @@ db = Database()
 
 # Window.size = (1080, 2400)
 
+
 class MainScreen(Screen):
     
     pass
@@ -27,9 +28,10 @@ class MainScreen(Screen):
 class DrillsScreen(Screen):
     temp = None
     def on_pre_enter(self, *args):
-        txt = str(Window.size)
-        self.temp = MDLabel(text=txt)
-        self.ids.display_size.add_widget(self.temp)
+        if not self.temp:
+            txt = str(Window.size)
+            self.temp = MDLabel(text=txt)
+            self.ids.display_size.add_widget(self.temp)
     pass
 
 class TwoByFourScreen(Screen):

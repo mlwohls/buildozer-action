@@ -76,7 +76,7 @@ ScreenManager:
         MDBoxLayout:
             orientation: "vertical"
             size_hint: 1, 0.4
-            padding: 10
+            padding: "10dp"
 
             MDBoxLayout:
                 id: twobyfour_current_container
@@ -89,8 +89,8 @@ ScreenManager:
         MDBoxLayout:
             size_hint: 1, 0.5
             orientation: "vertical"
-            padding: 30
-            spacing: 30
+            padding: "10dp"
+            spacing: "10dp"
 
             MDLabel:
                 markup: True
@@ -142,12 +142,16 @@ ScreenManager:
                 id: twobyfour_club
                 MDSegmentedControlItem:
                     text: "PW"
+                    font_size: "10dp"
                 MDSegmentedControlItem:
                     text: "GW"
+                    font_size: "10dp"
                 MDSegmentedControlItem:
                     text: "SW"
+                    font_size: "10dp"
                 MDSegmentedControlItem:
                     text: "LW"
+                    font_size: "10dp"
 
         BoxLayout:
             orientation: 'vertical'
@@ -160,17 +164,17 @@ ScreenManager:
                 id: twobyfour_lie
                 MDSegmentedControlItem:
                     text: "Tight"
-                    font_size: 20
+                    font_size: "10dp"
                 MDSegmentedControlItem:
                     text: "Rough"
-                    font_size: 20
+                    font_size: "10dp"
                 MDSegmentedControlItem:
                     text: "Sand"
-                    font_size: 20
+                    font_size: "10dp"
 
                     
         BoxLayout:
-            orientation: 'Vertical'
+            orientation: 'vertical'
             spacing: "10dp"
             MDLabel:
                 text: 'Total Distance (ft)'
