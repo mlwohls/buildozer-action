@@ -80,7 +80,7 @@ class TwoByFourScreen(Screen):
 
     def add_score(self, drill, session_id, score, other=None):
         db.submit_score(drill, session_id, int(score.text), other)
-        self.close_dialog()
+        # self.close_dialog()
         self.data_table.add_row((str(self.data_table_row_num + 1), "4", score.text, ""))
         self.data_table_row_num += 1
         pass 

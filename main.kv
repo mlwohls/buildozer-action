@@ -85,27 +85,12 @@ ScreenManager:
         MDBoxLayout:
             orientation: 'vertical'
             spacing: "10dp"
-            size_hint: 0.9, 0.4
+            size_hint: 0.9, 0.5
             padding: "10dp"
-            MDBoxLayout:
-                orientation: 'vertical'
-                spacing: "10dp"
-                
-                MDLabel:
-                    text: 'Score'
-                    bold: True
-                
-                MDTextField:
-                    id: twobyfour_score
-                    text: ''
-                    hint_text: "Add Score..."
-                    max_text_length: 2
-                    input_type: 'tel'
-                    input_filter: 'int'
             
             MDBoxLayout:
                 orientation: 'vertical'
-                spacing: "10dp"
+                spacing: "1dp"
                 MDLabel:
                     text: 'Club'
                     bold: True
@@ -128,7 +113,6 @@ ScreenManager:
             MDBoxLayout:
                 orientation: 'vertical'
                 spacing: "10dp"
-                #md_bg_color: "blue"
                 MDLabel:
                     text: 'Lie'
                     bold: True
@@ -154,10 +138,10 @@ ScreenManager:
                     bold: True
                 MDBoxLayout:
                     orientation: 'horizontal'
-                    #md_bg_color: app.theme_cls.primary_color
 
                     MDSlider:
                         id: twobyfour_distance
+                        size_hint: 0.85, None
                         hint: True
                         min: 0
                         max: 60
@@ -165,17 +149,41 @@ ScreenManager:
                         step: 5
                         hint_bg_color: app.theme_cls.primary_color
                         hint_text_color: "white"
+                    MDLabel:
+                        text: str(twobyfour_distance.value) + " ft"
+                        bold: True
+                        size_hint: 0.15, None
+                    
             
-
             MDBoxLayout:
-                orientation: 'horizontal'
+                orientation: 'vertical'
+                spacing: "10dp"
+                MDLabel:
+                    text: 'Score'
+                    bold: True
+            
+                MDBoxLayout:
+                    orientation: 'horizontal'
+                    MDSlider:
+                        id: twobyfour_score
+                        size_hint: 0.6, None
+                        hint: True
+                        min: 2
+                        max: 8
+                        value: 4
+                        step: 1
+                        hint_bg_color: app.theme_cls.primary_color
+                        hint_text_color: "white"
+                    
+                    MDLabel:
+                        text: str(twobyfour_score.value)
+                        bold: True
+                        size_hint: 0.1, None
 
-                MDRaisedButton:
-                    text: "SAVE"
-                    on_release: app.root.get_screen("twobyfour").add_score('twobyfours', app.session_id, twobyfour_score); twobyfour_score.text = ''
-                MDFlatButton:
-                    text: 'CANCEL'
-                    on_release: app.root.get_screen("twobyfour").close_dialog()
+                    MDRaisedButton:
+                        text: "SAVE"
+                        size_hint: 0.2, None
+                        on_release: app.root.get_screen("twobyfour").add_score('twobyfours', app.session_id, twobyfour_score); twobyfour_score.text = ''
 
 
 
